@@ -28,7 +28,7 @@ module.exports = function (app) {
         Todo.create({
             text: req.body.text,
             done: false
-        }, function (err, todo) {
+        }, function (err) {
             if (err)
                 res.send(err);
 
@@ -42,7 +42,7 @@ module.exports = function (app) {
     app.delete('/api/todos/:todo_id', function (req, res) {
         Todo.remove({
             _id: req.params.todo_id
-        }, function (err, todo) {
+        }, function (err) {
             if (err)
                 res.send(err);
 
@@ -60,13 +60,13 @@ app.post('/api/todos', function (req, res) {
     Todo.create({
         text: req.body.text,
         done: false
-    }, function (err, todo) {
+    }, function (err, todos) {
         if (err) {
             console.error("❌ Error!!!:", err);
             return res.send(err);
         }
 
-        console.log("✅ Saved ToDo!!!:", todo);
+        console.log("✅ Saved ToDo!:", todos);
         getTodos(res);
     });
 });

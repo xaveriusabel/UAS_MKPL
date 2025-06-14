@@ -1,3 +1,4 @@
+/* global angular */
 angular.module('todoService', [])
 
 	// super simple service
