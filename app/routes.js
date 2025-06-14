@@ -62,11 +62,11 @@ app.post('/api/todos', function (req, res) {
         done: false
     }, function (err, todo) {
         if (err) {
-            console.error("❌ Error!!!:", err);
+            console.error("❌ Error!:", err);
             return res.send(err);
         }
 
-        console.log("✅ Saved ToDo!!!!!!!!!!!:", todo);
+        console.log("✅ Saved ToDo!:", todo);
         getTodos(res);
     });
 });
